@@ -1,3 +1,5 @@
+-- Commit to trigger GitHub contribution graph on May 25
+
 CREATE DATABASE JUST_DO_IT;
 
 USE JUST_DO_IT;
