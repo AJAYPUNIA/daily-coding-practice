@@ -1,11 +1,8 @@
--- query to find the top 2 customers who have spent the most money
---  (i.e., highest total order amount).
+-- query to return the names of products that were never ordered.
 
 
-SELECT customers.customer_id , customers.name , SUM(orders.amount) AS total_amount
-FROM customers
-INNER JOIN orders
-ON customers.customer_id = orders.customer_id
-GROUP BY customers.customer_id, customers.name 
-ORDER BY total_amount DESC
-LIMIT 2;
+SELECT products.product_name
+FROM products
+LEFT JOIN orders
+ON products.product_id = orders.product_id
+WHERE orders.product_id IS NULL;
