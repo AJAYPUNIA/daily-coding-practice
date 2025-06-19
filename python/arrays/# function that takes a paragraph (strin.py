@@ -1,4 +1,4 @@
-# function that takes a paragraph (string) and
+s# function that takes a paragraph (string) and
 # returns the number of unique words (case-insensitive), ignoring punctuation.
 import string
 def count_unique_words(sentence):
