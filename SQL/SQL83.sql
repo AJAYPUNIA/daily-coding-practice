@@ -1,23 +1,15 @@
--- SQL query to find the name of the department with the highest average salary.
+ -- Second Highest Salary
+
 -- Table: Employee
 -- Columns:
--- 	•	id (INT)
--- 	•	name (VARCHAR)
--- 	•	salary (INT)
--- 	•	department_id (INT)
+-- 	•	id (int)
+-- 	•	name (varchar)
+-- 	•	salary (int)
 
--- Table: Department
--- Columns:
--- 	•	id (INT)
--- 	•	department_name (VARCHAR)
+-- 🧩 Question:
+-- Write a SQL query to find the second highest salary from the Employee table.
 
--- solution
-
-
-SELECT Department.department_name , AVG(Employee.salary) as average_salary
-FROM Department
-INNER JOIN Employee
-ON Department.id = Employee.department_id
-GROUP BY Department.department_name
-ORDER BY average_salary DESC
-LIMIT 1;
+SELECT salary 
+FROM Employee
+ORDER BY salary DESC
+LIMIT 1 OFFSET 1;
